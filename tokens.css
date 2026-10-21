@@ -1,0 +1,1631 @@
+/* ═════════════════════════════════════════════════════════════════
+   Salesforce Brand Foundations — generated tokens.css
+   ─────────────────────────────────────────────────────────────────
+   Day = light mode, Night = dark mode. Wrap your app in
+     <html data-theme='day | night'
+           data-typography='default | modern'
+           data-spacing='default | tight'
+           data-radii='default | sharp'>
+   to opt into a non-default variant. The default :root block
+   ships Day + Default everywhere so a drop-in import is
+   complete on its own.
+
+   Note on var names: every identifier in this stylesheet is
+   flat-hyphenated per the Tier 0 contract in
+   `salesforce-tokens/spec/naming.md` — e.g. `--color-on-surface-1`,
+   `--space-grid-desktop-margin`. Names contain only lower-case
+   ASCII, digits, and single hyphens; no slashes, no backslashes,
+   no underscores. The literal spelling is identical in CSS,
+   inline-style React props, Tailwind arbitrary values, and
+   `tokens.index.json` keys — no surface-specific escaping.
+
+   Source-of-truth: src/themes/brands/salesforce/* — regenerate
+   via `npm run build:tokens` after editing any token source.
+   ═════════════════════════════════════════════════════════════════ */
+
+/* ─── Color palette primitives (Layer 1) ────────────────────────── */
+/* Named color swatches from the brand palette. These are the     */
+/* raw primitives that semantic aliases (Layer 2) chain to via    */
+/* var(). Declared first so alias var() references resolve.       */
+:root {
+  /* ── Core palette ── */
+  /* Primary Blues */
+  --color-cloud-blue-95: #eaf5fe;
+  --color-cloud-blue-90: #cfe9fe;
+  --color-cloud-blue-80: #90d0fe;
+  --color-cloud-blue-68: #00b3ff;
+  --color-electric-blue-50: #066afe;
+  --color-electric-blue-30: #022ac0;
+  --color-electric-blue-20: #002775;
+  --color-electric-blue-15: #001e5b;
+  --color-electric-blue-10: #001642;
+  /* Teal */
+  --color-teal-20: #023434;
+  --color-teal-60: #06a59a;
+  --color-teal-80: #04e1cb;
+  --color-teal-95: #def9f3;
+  /* Yellow */
+  --color-yellow-20: #4f2100;
+  --color-yellow-70: #e4a201;
+  --color-yellow-80: #fcc003;
+  --color-yellow-95: #fbf3e0;
+  /* Pink */
+  --color-pink-20: #61022a;
+  --color-pink-40: #b60554;
+  --color-pink-60: #ff538a;
+  --color-pink-95: #fef0f3;
+  /* Violet */
+  --color-violet-20: #580276;
+  --color-violet-30: #730394;
+  --color-violet-65: #d17dfe;
+  --color-violet-95: #f9f0ff;
+  /* Neutrals */
+  --color-white: #ffffff;
+  --color-neutral-95: #f3f3f3;
+  --color-neutral-90: #e5e5e5;
+  --color-neutral-80: #c9c9c9;
+  --color-neutral-70: #aeaeae;
+  --color-neutral-65: #a0a0a0;
+  --color-neutral-60: #939393;
+  --color-neutral-50: #747474;
+  --color-neutral-40: #5c5c5c;
+  --color-neutral-30: #444444;
+  --color-neutral-20: #2e2e2e;
+  --color-neutral-15: #242424;
+  --color-neutral-10: #181818;
+  --color-black: #000000;
+  /* Feedback — Green (Success) */
+  --color-green-95: #ebf7e6;
+  --color-green-90: #cdefc4;
+  --color-green-80: #91db8b;
+  --color-green-70: #45c65a;
+  --color-green-65: #41b658;
+  --color-green-60: #3ba755;
+  --color-green-50: #2e844a;
+  --color-green-40: #22683e;
+  --color-green-30: #194e31;
+  --color-green-20: #143b25;
+  --color-green-15: #0c2912;
+  --color-green-10: #071b12;
+  /* Feedback — Red (Alert) */
+  --color-red-95: #fef1ee;
+  --color-red-90: #feded8;
+  --color-red-80: #feb8ab;
+  --color-red-70: #fe8f7d;
+  --color-red-65: #fe7765;
+  --color-red-60: #fe5c4c;
+  --color-red-50: #ea001e;
+  --color-red-40: #ba0517;
+  --color-red-30: #8e030f;
+  --color-red-20: #640103;
+  --color-red-15: #4a0c04;
+  --color-red-10: #300c01;
+
+  /* ── Extended palette (scarce use — data-viz / charts only) ── */
+  /* Hot Orange */
+  --color-hot-orange-95: #fef1ed;
+  --color-hot-orange-70: #ff906e;
+  --color-hot-orange-60: #ff5d2d;
+  --color-hot-orange-40: #aa3001;
+  --color-hot-orange-30: #7e2600;
+  /* Orange */
+  --color-orange-95: #fff1ea;
+  --color-orange-80: #ffba90;
+  --color-orange-65: #f38303;
+  --color-orange-50: #a96404;
+  --color-orange-30: #5f3e02;
+  /* Yellow */
+  --color-yellow-95: #fbf3e0;
+  --color-yellow-80: #fcc003;
+  --color-yellow-70: #e4a201;
+  --color-yellow-50: #a96504;
+  --color-yellow-30: #6f3400;
+  /* Green */
+  --color-green-95: #ebf7e6;
+  --color-green-80: #91db8b;
+  --color-green-70: #45c65a;
+  --color-green-50: #2e844a;
+  --color-green-20: #143b25;
+  /* Teal */
+  --color-teal-95: #def9f3;
+  --color-teal-80: #04e1cb;
+  --color-teal-60: #06a59a;
+  --color-teal-40: #056764;
+  --color-teal-20: #023434;
+  /* Cloud Blue */
+  --color-cloud-blue-95: #eaf5fe;
+  --color-cloud-blue-80: #90d0fe;
+  --color-cloud-blue-60: #0d9dda;
+  --color-cloud-blue-40: #05628a;
+  --color-cloud-blue-20: #023248;
+  /* Electric Blue */
+  --color-electric-blue-95: #edf4ff;
+  --color-electric-blue-80: #a8cbff;
+  --color-electric-blue-50: #066afe;
+  --color-electric-blue-30: #022ac0;
+  --color-electric-blue-15: #001e5b;
+  /* Indigo */
+  --color-indigo-95: #f1f3fb;
+  --color-indigo-70: #9ea9f1;
+  --color-indigo-50: #5867e8;
+  --color-indigo-30: #2f2cb7;
+  --color-indigo-20: #270c92;
+  /* Purple */
+  --color-purple-95: #f6f2fb;
+  --color-purple-70: #c29ef1;
+  --color-purple-60: #ad7bee;
+  --color-purple-40: #7526e3;
+  --color-purple-20: #401075;
+  /* Violet */
+  --color-violet-95: #f9f0ff;
+  --color-violet-65: #d17dfe;
+  --color-violet-50: #ba01ff;
+  --color-violet-30: #730394;
+  --color-violet-20: #580276;
+  /* Pink */
+  --color-pink-95: #fef0f3;
+  --color-pink-70: #fe8aa7;
+  --color-pink-60: #ff538a;
+  --color-pink-40: #b60554;
+  --color-pink-20: #61022a;
+
+  /* ── Alpha primitives (translucent overlays — Night fills, veils, focus) ── */
+  --color-alpha-white-0: rgba(255, 255, 255, 0);
+  --color-alpha-white-5: rgba(255, 255, 255, 0.05);
+  --color-alpha-white-10: rgba(255, 255, 255, 0.10);
+  --color-alpha-white-15: rgba(255, 255, 255, 0.15);
+  --color-alpha-white-25: rgba(255, 255, 255, 0.25);
+  --color-alpha-white-40: rgba(255, 255, 255, 0.40);
+  --color-alpha-white-50: rgba(255, 255, 255, 0.50);
+  --color-alpha-white-60: rgba(255, 255, 255, 0.60);
+  --color-alpha-white-75: rgba(255, 255, 255, 0.75);
+  --color-alpha-white-85: rgba(255, 255, 255, 0.85);
+}
+
+/* ─── Day theme (light) — semantic aliases (Layer 2) ──────────── */
+/* SFDC theme — light mode. Generated by Theme Builder. */
+:root, [data-theme='day'] {
+  --color-background-1: var(--color-white, #FFFFFF);
+  --color-surface-1: var(--color-white, #FFFFFF);
+  --color-surface-container-1: var(--color-white, #FFFFFF);
+  --color-fill-accent: var(--color-electric-blue-50, #066AFE);
+  --color-fill-accent-hover: var(--color-electric-blue-30, #022AC0);
+  --color-fill-accent-active: var(--color-electric-blue-20, #002775);
+  --color-fill-neutral: var(--color-white, #FFFFFF);
+  --color-fill-neutral-hover: var(--color-cloud-blue-95, #EAF5FE);
+  --color-fill-neutral-active: var(--color-cloud-blue-95, #EAF5FE);
+  --color-on-surface-1: var(--color-electric-blue-15, #001E5B);
+  --color-on-surface-2: var(--color-neutral-10, #181818);
+  --color-on-surface-3: var(--color-neutral-30, #444444);
+  --color-on-surface-4: var(--color-neutral-50, #747474);
+  --color-on-surface-disabled: var(--color-neutral-60, #939393);
+  --color-on-fill-accent: var(--color-white, #FFFFFF);
+  --color-link: var(--color-electric-blue-30, #022AC0);
+  --color-link-hover: var(--color-electric-blue-20, #002775);
+  --color-link-active: var(--color-electric-blue-20, #002775);
+  --color-border-neutral: var(--color-neutral-50, #747474);
+  --color-border-neutral-hover: var(--color-electric-blue-30, #022AC0);
+  --color-border-neutral-active: var(--color-electric-blue-30, #022AC0);
+  --color-border-accent: var(--color-electric-blue-30, #022AC0);
+  --color-border-accent-hover: var(--color-electric-blue-20, #002775);
+  --color-border-accent-active: var(--color-electric-blue-20, #002775);
+  --color-border-focus: var(--color-electric-blue-50, #066AFE);
+  --color-border-disabled: var(--color-neutral-80, #c9c9c9);
+  --color-special-use-case-fill-1: var(--color-green-50, #2E844A);
+  --color-special-use-case-fill-2: var(--color-green-20, #143B25);
+  --color-special-use-case-fill-3: var(--color-green-20, #143B25);
+  --color-special-use-case-fill-4: var(--color-green-20, #143B25);
+  --color-special-use-case-on-fill: var(--color-white, #ffffff);
+  --color-border-error: var(--color-red-50, #EA001E);
+  --color-on-fill-error-1: var(--color-red-50, #EA001E);
+  --color-border-success: var(--color-green-50, #2E844A);
+  --color-on-fill-success: var(--color-green-50, #2E844A);
+  --color-border-warning: var(--color-yellow-50, #A96504);
+  --color-on-fill-warning: var(--color-yellow-50, #A96504);
+  --color-border-info: var(--color-electric-blue-50, #066AFE);
+  --color-on-fill-info: var(--color-electric-blue-50, #066AFE);
+  --color-fill-disabled-dark: var(--color-neutral-50, #747474);
+  --color-on-fill-accent-hover: var(--color-white, #FFFFFF);
+  --color-on-fill-accent-active: var(--color-white, #FFFFFF);
+  --color-on-fill-neutral-brand: var(--color-electric-blue-30, #022AC0);
+  --color-on-fill-neutral-accent: var(--color-electric-blue-30, #022AC0);
+  --color-on-fill-neutral-accent-hover: var(--color-electric-blue-20, #002775);
+  --color-on-fill-neutral-accent-active: var(--color-electric-blue-20, #002775);
+  --color-on-fill-neutral: var(--color-neutral-10, #181818);
+  --color-on-fill-neutral-hover: var(--color-neutral-10, #181818);
+  --color-on-fill-neutral-active: var(--color-neutral-10, #181818);
+  --color-on-fill-neutral-muted: var(--color-neutral-50, #747474);
+  --color-fill-disabled-1: var(--color-neutral-95, #F3F3F3);
+  --color-fill-disabled-2: var(--color-neutral-80, #C9C9C9);
+  --color-fill-disabled-3: var(--color-neutral-50, #747474);
+  --color-on-fill-disabled-1: var(--color-neutral-60, #939393);
+  --color-on-fill-disabled-2: var(--color-white, #FFFFFF);
+  --color-on-fill-disabled-3: var(--color-white, #FFFFFF);
+  --color-fill-disabled-dark: #757575;
+  --color-border-brand-1: var(--color-electric-blue-50, #066AFE);
+  --color-border-brand-2: var(--color-electric-blue-50, #066AFE);
+  --color-border-brand-3: var(--color-electric-blue-50, #066AFE);
+  --color-border-brand-4: var(--color-electric-blue-50, #066AFE);
+  --color-border-1: var(--color-neutral-95, #F3F3F3);
+  --color-border-2: var(--color-neutral-90, #E5E5E5);
+  --color-border-3: var(--color-neutral-80, #C9C9C9);
+  --color-state-layer-color: var(--color-electric-blue-50, #066AFE);
+  --color-state-layer-opacity-hover: 0.08;
+  --color-state-layer-opacity-active: 0.12;
+  --color-fill-error-1: var(--color-red-95, #FEF1EE);
+  --color-fill-error-2: var(--color-red-50, #EA001E);
+  --color-fill-success: var(--color-green-95, #EBF7E6);
+  --color-fill-warning: var(--color-yellow-95, #FBF3E0);
+  --color-fill-info: var(--color-cloud-blue-95, #EAF5FE);
+  --color-on-fill-error-2: var(--color-white, #FFFFFF);
+  --color-on-surface-error: var(--color-red-50, #EA001E);
+  --color-on-surface-success: var(--color-green-50, #2E844A);
+  --color-on-surface-warning: var(--color-yellow-50, #A96504);
+  --color-on-surface-info: var(--color-electric-blue-50, #066AFE);
+  --color-on-surface-highlight: var(--color-electric-blue-50, #066AFE);
+  --color-on-surface-brand-1: #FFFFFF;
+  --color-on-surface-brand-2: #FFFFFF;
+  --color-on-surface-brand-3: #FFFFFF;
+
+  /* Semantic alias mirror (--s-color-*) — see themeBuilder.ts:
+     toCssExport for the rationale. Each --s-color-X aliases
+     through --color-X so overrides at either layer propagate. */
+  --s-color-background-1: var(--color-background-1);
+  --s-color-surface-1: var(--color-surface-1);
+  --s-color-surface-container-1: var(--color-surface-container-1);
+  --s-color-fill-accent: var(--color-fill-accent);
+  --s-color-fill-accent-hover: var(--color-fill-accent-hover);
+  --s-color-fill-accent-active: var(--color-fill-accent-active);
+  --s-color-fill-neutral: var(--color-fill-neutral);
+  --s-color-fill-neutral-hover: var(--color-fill-neutral-hover);
+  --s-color-fill-neutral-active: var(--color-fill-neutral-active);
+  --s-color-on-surface-1: var(--color-on-surface-1);
+  --s-color-on-surface-2: var(--color-on-surface-2);
+  --s-color-on-surface-3: var(--color-on-surface-3);
+  --s-color-on-surface-4: var(--color-on-surface-4);
+  --s-color-on-surface-disabled: var(--color-on-surface-disabled);
+  --s-color-on-fill-accent: var(--color-on-fill-accent);
+  --s-color-link: var(--color-link);
+  --s-color-link-hover: var(--color-link-hover);
+  --s-color-link-active: var(--color-link-active);
+  --s-color-border-neutral: var(--color-border-neutral);
+  --s-color-border-neutral-hover: var(--color-border-neutral-hover);
+  --s-color-border-neutral-active: var(--color-border-neutral-active);
+  --s-color-border-accent: var(--color-border-accent);
+  --s-color-border-accent-hover: var(--color-border-accent-hover);
+  --s-color-border-accent-active: var(--color-border-accent-active);
+  --s-color-border-focus: var(--color-border-focus);
+  --s-color-border-disabled: var(--color-border-disabled);
+  --s-color-special-use-case-fill-1: var(--color-special-use-case-fill-1);
+  --s-color-special-use-case-fill-2: var(--color-special-use-case-fill-2);
+  --s-color-special-use-case-fill-3: var(--color-special-use-case-fill-3);
+  --s-color-special-use-case-fill-4: var(--color-special-use-case-fill-4);
+  --s-color-special-use-case-on-fill: var(--color-special-use-case-on-fill);
+  --s-color-border-error: var(--color-border-error);
+  --s-color-on-fill-error-1: var(--color-on-fill-error-1);
+  --s-color-border-success: var(--color-border-success);
+  --s-color-on-fill-success: var(--color-on-fill-success);
+  --s-color-border-warning: var(--color-border-warning);
+  --s-color-on-fill-warning: var(--color-on-fill-warning);
+  --s-color-border-info: var(--color-border-info);
+  --s-color-on-fill-info: var(--color-on-fill-info);
+  --s-color-fill-disabled-dark: var(--color-fill-disabled-dark);
+  --s-color-on-fill-accent-hover: var(--color-on-fill-accent-hover);
+  --s-color-on-fill-accent-active: var(--color-on-fill-accent-active);
+  --s-color-on-fill-neutral-brand: var(--color-on-fill-neutral-brand);
+  --s-color-on-fill-neutral-accent: var(--color-on-fill-neutral-accent);
+  --s-color-on-fill-neutral-accent-hover: var(--color-on-fill-neutral-accent-hover);
+  --s-color-on-fill-neutral-accent-active: var(--color-on-fill-neutral-accent-active);
+  --s-color-on-fill-neutral: var(--color-on-fill-neutral);
+  --s-color-on-fill-neutral-hover: var(--color-on-fill-neutral-hover);
+  --s-color-on-fill-neutral-active: var(--color-on-fill-neutral-active);
+  --s-color-on-fill-neutral-muted: var(--color-on-fill-neutral-muted);
+  --s-color-fill-disabled-1: var(--color-fill-disabled-1);
+  --s-color-fill-disabled-2: var(--color-fill-disabled-2);
+  --s-color-fill-disabled-3: var(--color-fill-disabled-3);
+  --s-color-on-fill-disabled-1: var(--color-on-fill-disabled-1);
+  --s-color-on-fill-disabled-2: var(--color-on-fill-disabled-2);
+  --s-color-on-fill-disabled-3: var(--color-on-fill-disabled-3);
+  --s-color-border-brand-1: var(--color-border-brand-1);
+  --s-color-border-brand-2: var(--color-border-brand-2);
+  --s-color-border-brand-3: var(--color-border-brand-3);
+  --s-color-border-brand-4: var(--color-border-brand-4);
+  --s-color-border-1: var(--color-border-1);
+  --s-color-border-2: var(--color-border-2);
+  --s-color-border-3: var(--color-border-3);
+  --s-color-state-layer-color: var(--color-state-layer-color);
+  --s-color-state-layer-opacity-hover: var(--color-state-layer-opacity-hover);
+  --s-color-state-layer-opacity-active: var(--color-state-layer-opacity-active);
+  --s-color-fill-error-1: var(--color-fill-error-1);
+  --s-color-fill-error-2: var(--color-fill-error-2);
+  --s-color-fill-success: var(--color-fill-success);
+  --s-color-fill-warning: var(--color-fill-warning);
+  --s-color-fill-info: var(--color-fill-info);
+  --s-color-on-fill-error-2: var(--color-on-fill-error-2);
+  --s-color-on-surface-error: var(--color-on-surface-error);
+  --s-color-on-surface-success: var(--color-on-surface-success);
+  --s-color-on-surface-warning: var(--color-on-surface-warning);
+  --s-color-on-surface-info: var(--color-on-surface-info);
+  --s-color-on-surface-highlight: var(--color-on-surface-highlight);
+  --s-color-on-surface-brand-1: var(--color-on-surface-brand-1);
+  --s-color-on-surface-brand-2: var(--color-on-surface-brand-2);
+  --s-color-on-surface-brand-3: var(--color-on-surface-brand-3);
+}
+
+/* ─── Night theme (dark) ────────────────────────────────────── */
+/* SFDC theme — dark mode. Generated by Theme Builder. */
+[data-theme='night'] {
+  --color-background-1: var(--color-electric-blue-10, #001642);
+  --color-surface-1: var(--color-electric-blue-15, #001E5B);
+  --color-surface-container-1: var(--color-white, #FFFFFF);
+  --color-fill-accent: var(--color-white, #FFFFFF);
+  --color-fill-accent-hover: var(--color-alpha-white-85, rgba(255, 255, 255, 0.85));
+  --color-fill-accent-active: var(--color-alpha-white-85, rgba(255, 255, 255, 0.85));
+  --color-fill-neutral: var(--color-alpha-white-0, rgba(255, 255, 255, 0));
+  --color-fill-neutral-hover: var(--color-alpha-white-25, rgba(255, 255, 255, 0.25));
+  --color-fill-neutral-active: var(--color-alpha-white-25, rgba(255, 255, 255, 0.25));
+  --color-on-surface-1: var(--color-white, #FFFFFF);
+  --color-on-surface-2: var(--color-white, #FFFFFF);
+  --color-on-surface-3: var(--color-white, #FFFFFF);
+  --color-on-surface-4: var(--color-white, #FFFFFF);
+  --color-on-surface-disabled: var(--color-neutral-60, #939393);
+  --color-on-fill-accent: var(--color-electric-blue-30, #022AC0);
+  --color-link: var(--color-white, #FFFFFF);
+  --color-link-hover: var(--color-alpha-white-85, rgba(255, 255, 255, 0.85));
+  --color-link-active: var(--color-alpha-white-85, rgba(255, 255, 255, 0.85));
+  --color-border-neutral: var(--color-white, #FFFFFF);
+  --color-border-neutral-hover: var(--color-electric-blue-80, #A8CBFF);
+  --color-border-neutral-active: var(--color-electric-blue-80, #A8CBFF);
+  --color-border-accent: var(--color-white, #FFFFFF);
+  --color-border-accent-hover: var(--color-white, #FFFFFF);
+  --color-border-accent-active: var(--color-white, #FFFFFF);
+  --color-border-focus: var(--color-white, #FFFFFF);
+  --color-border-disabled: var(--color-alpha-white-25, rgba(255, 255, 255, 0.25));
+  --color-special-use-case-fill-1: var(--color-green-65, #41B658);
+  --color-special-use-case-fill-2: var(--color-green-70, #45C65A);
+  --color-special-use-case-fill-3: var(--color-green-70, #45C65A);
+  --color-special-use-case-fill-4: var(--color-green-70, #45C65A);
+  --color-special-use-case-on-fill: var(--color-white, #ffffff);
+  --color-border-error: var(--color-red-70, #FE8F7D);
+  --color-on-fill-error-1: var(--color-red-70, #FE8F7D);
+  --color-border-success: var(--color-green-70, #45C65A);
+  --color-on-fill-success: var(--color-green-70, #45C65A);
+  --color-border-warning: var(--color-yellow-80, #FCC003);
+  --color-on-fill-warning: var(--color-yellow-80, #FCC003);
+  --color-border-info: var(--color-electric-blue-80, #A8CBFF);
+  --color-on-fill-info: var(--color-electric-blue-80, #A8CBFF);
+  --color-fill-disabled-dark: rgba(255, 255, 255, 0.40);
+  --color-on-fill-accent-hover: var(--color-electric-blue-30, #022AC0);
+  --color-on-fill-accent-active: var(--color-electric-blue-30, #022AC0);
+  --color-on-fill-neutral-brand: var(--color-electric-blue-30, #022AC0);
+  --color-on-fill-neutral-accent: var(--color-white, #FFFFFF);
+  --color-on-fill-neutral-accent-hover: var(--color-white, #FFFFFF);
+  --color-on-fill-neutral-accent-active: var(--color-white, #FFFFFF);
+  --color-on-fill-neutral: var(--color-white, #FFFFFF);
+  --color-on-fill-neutral-hover: var(--color-white, #FFFFFF);
+  --color-on-fill-neutral-active: var(--color-white, #FFFFFF);
+  --color-on-fill-neutral-muted: var(--color-neutral-80, #C9C9C9);
+  --color-fill-disabled-1: var(--color-neutral-20, #2E2E2E);
+  --color-fill-disabled-2: var(--color-neutral-80, #C9C9C9);
+  --color-fill-disabled-3: var(--color-neutral-50, #747474);
+  --color-on-fill-disabled-1: var(--color-neutral-60, #939393);
+  --color-on-fill-disabled-2: var(--color-white, #FFFFFF);
+  --color-on-fill-disabled-3: var(--color-white, #FFFFFF);
+  --color-fill-disabled-dark: rgba(255, 255, 255, 0.40);
+  --color-border-brand-1: var(--color-white, #FFFFFF);
+  --color-border-brand-2: var(--color-white, #FFFFFF);
+  --color-border-brand-3: var(--color-white, #FFFFFF);
+  --color-border-brand-4: var(--color-white, #FFFFFF);
+  --color-border-1: var(--color-alpha-white-15, rgba(255, 255, 255, 0.15));
+  --color-border-2: var(--color-neutral-90, #E5E5E5);
+  --color-border-3: var(--color-alpha-white-40, rgba(255, 255, 255, 0.40));
+  --color-state-layer-color: var(--color-white, #FFFFFF);
+  --color-state-layer-opacity-hover: 0.12;
+  --color-state-layer-opacity-active: 0.20;
+  --color-fill-error-1: var(--color-red-15, #4A0C04);
+  --color-fill-error-2: var(--color-red-60, #FE5C4C);
+  --color-fill-success: var(--color-green-15, #0C2912);
+  --color-fill-warning: var(--color-yellow-20, #4F2100);
+  --color-fill-info: var(--color-cloud-blue-20, #023248);
+  --color-on-fill-error-2: var(--color-white, #FFFFFF);
+  --color-on-surface-error: var(--color-red-70, #FE8F7D);
+  --color-on-surface-success: var(--color-green-70, #45C65A);
+  --color-on-surface-warning: var(--color-yellow-80, #FCC003);
+  --color-on-surface-info: var(--color-electric-blue-80, #A8CBFF);
+  --color-on-surface-highlight: var(--color-cloud-blue-80, #90D0FE);
+  --color-on-surface-brand-1: #002775;
+  --color-on-surface-brand-2: #002775;
+  --color-on-surface-brand-3: #002775;
+
+  /* Semantic alias mirror (--s-color-*) — see themeBuilder.ts:
+     toCssExport for the rationale. Each --s-color-X aliases
+     through --color-X so overrides at either layer propagate. */
+  --s-color-background-1: var(--color-background-1);
+  --s-color-surface-1: var(--color-surface-1);
+  --s-color-surface-container-1: var(--color-surface-container-1);
+  --s-color-fill-accent: var(--color-fill-accent);
+  --s-color-fill-accent-hover: var(--color-fill-accent-hover);
+  --s-color-fill-accent-active: var(--color-fill-accent-active);
+  --s-color-fill-neutral: var(--color-fill-neutral);
+  --s-color-fill-neutral-hover: var(--color-fill-neutral-hover);
+  --s-color-fill-neutral-active: var(--color-fill-neutral-active);
+  --s-color-on-surface-1: var(--color-on-surface-1);
+  --s-color-on-surface-2: var(--color-on-surface-2);
+  --s-color-on-surface-3: var(--color-on-surface-3);
+  --s-color-on-surface-4: var(--color-on-surface-4);
+  --s-color-on-surface-disabled: var(--color-on-surface-disabled);
+  --s-color-on-fill-accent: var(--color-on-fill-accent);
+  --s-color-link: var(--color-link);
+  --s-color-link-hover: var(--color-link-hover);
+  --s-color-link-active: var(--color-link-active);
+  --s-color-border-neutral: var(--color-border-neutral);
+  --s-color-border-neutral-hover: var(--color-border-neutral-hover);
+  --s-color-border-neutral-active: var(--color-border-neutral-active);
+  --s-color-border-accent: var(--color-border-accent);
+  --s-color-border-accent-hover: var(--color-border-accent-hover);
+  --s-color-border-accent-active: var(--color-border-accent-active);
+  --s-color-border-focus: var(--color-border-focus);
+  --s-color-border-disabled: var(--color-border-disabled);
+  --s-color-special-use-case-fill-1: var(--color-special-use-case-fill-1);
+  --s-color-special-use-case-fill-2: var(--color-special-use-case-fill-2);
+  --s-color-special-use-case-fill-3: var(--color-special-use-case-fill-3);
+  --s-color-special-use-case-fill-4: var(--color-special-use-case-fill-4);
+  --s-color-special-use-case-on-fill: var(--color-special-use-case-on-fill);
+  --s-color-border-error: var(--color-border-error);
+  --s-color-on-fill-error-1: var(--color-on-fill-error-1);
+  --s-color-border-success: var(--color-border-success);
+  --s-color-on-fill-success: var(--color-on-fill-success);
+  --s-color-border-warning: var(--color-border-warning);
+  --s-color-on-fill-warning: var(--color-on-fill-warning);
+  --s-color-border-info: var(--color-border-info);
+  --s-color-on-fill-info: var(--color-on-fill-info);
+  --s-color-fill-disabled-dark: var(--color-fill-disabled-dark);
+  --s-color-on-fill-accent-hover: var(--color-on-fill-accent-hover);
+  --s-color-on-fill-accent-active: var(--color-on-fill-accent-active);
+  --s-color-on-fill-neutral-brand: var(--color-on-fill-neutral-brand);
+  --s-color-on-fill-neutral-accent: var(--color-on-fill-neutral-accent);
+  --s-color-on-fill-neutral-accent-hover: var(--color-on-fill-neutral-accent-hover);
+  --s-color-on-fill-neutral-accent-active: var(--color-on-fill-neutral-accent-active);
+  --s-color-on-fill-neutral: var(--color-on-fill-neutral);
+  --s-color-on-fill-neutral-hover: var(--color-on-fill-neutral-hover);
+  --s-color-on-fill-neutral-active: var(--color-on-fill-neutral-active);
+  --s-color-on-fill-neutral-muted: var(--color-on-fill-neutral-muted);
+  --s-color-fill-disabled-1: var(--color-fill-disabled-1);
+  --s-color-fill-disabled-2: var(--color-fill-disabled-2);
+  --s-color-fill-disabled-3: var(--color-fill-disabled-3);
+  --s-color-on-fill-disabled-1: var(--color-on-fill-disabled-1);
+  --s-color-on-fill-disabled-2: var(--color-on-fill-disabled-2);
+  --s-color-on-fill-disabled-3: var(--color-on-fill-disabled-3);
+  --s-color-border-brand-1: var(--color-border-brand-1);
+  --s-color-border-brand-2: var(--color-border-brand-2);
+  --s-color-border-brand-3: var(--color-border-brand-3);
+  --s-color-border-brand-4: var(--color-border-brand-4);
+  --s-color-border-1: var(--color-border-1);
+  --s-color-border-2: var(--color-border-2);
+  --s-color-border-3: var(--color-border-3);
+  --s-color-state-layer-color: var(--color-state-layer-color);
+  --s-color-state-layer-opacity-hover: var(--color-state-layer-opacity-hover);
+  --s-color-state-layer-opacity-active: var(--color-state-layer-opacity-active);
+  --s-color-fill-error-1: var(--color-fill-error-1);
+  --s-color-fill-error-2: var(--color-fill-error-2);
+  --s-color-fill-success: var(--color-fill-success);
+  --s-color-fill-warning: var(--color-fill-warning);
+  --s-color-fill-info: var(--color-fill-info);
+  --s-color-on-fill-error-2: var(--color-on-fill-error-2);
+  --s-color-on-surface-error: var(--color-on-surface-error);
+  --s-color-on-surface-success: var(--color-on-surface-success);
+  --s-color-on-surface-warning: var(--color-on-surface-warning);
+  --s-color-on-surface-info: var(--color-on-surface-info);
+  --s-color-on-surface-highlight: var(--color-on-surface-highlight);
+  --s-color-on-surface-brand-1: var(--color-on-surface-brand-1);
+  --s-color-on-surface-brand-2: var(--color-on-surface-brand-2);
+  --s-color-on-surface-brand-3: var(--color-on-surface-brand-3);
+}
+
+/* ─── Default typography (Avant Garde + Salesforce Sans) ────── */
+/* SFDC typography — generated by Theme Builder. */
+:root, [data-typography='default'] {
+  --font-family-display: "Avant Garde For Salesforce", "ITC Avant Garde", Arial, sans-serif;
+  --font-family-body: "Salesforce Sans", Arial, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-demi: 600;
+  --font-weight-bold: 700;
+  --font-size-12: 12px;
+  --font-size-14: 14px;
+  --font-size-16: 16px;
+  --font-size-18: 18px;
+  --font-size-20: 20px;
+  --font-size-24: 24px;
+  --font-size-32: 32px;
+  --font-size-40: 40px;
+  --font-size-48: 48px;
+  --font-size-56: 56px;
+  --font-size-80: 80px;
+  --font-line-height-tight: 1.125;
+  --font-line-height-snug: 1.25;
+  --font-line-height-normal: 1.5;
+  --font-letter-spacing--4: -0.0036em;
+  --font-letter-spacing--3: -0.003em;
+  --font-letter-spacing--2: -0.0025em;
+  --font-letter-spacing--1: -0.0015em;
+  --font-letter-spacing-0: 0em;
+  --font-letter-spacing-1: 0.00125em;
+  --font-letter-spacing-2: 0.002em;
+  --font-style-display-1-family: "Avant Garde For Salesforce", "ITC Avant Garde", Arial, sans-serif;
+  --font-style-display-1-weight: 600;
+  --font-style-display-1-size: 80px;
+  --font-style-display-1-line-height: 1.125;
+  --font-style-display-1-letter-spacing: -0.0036em;
+  --font-style-display-2-family: "Avant Garde For Salesforce", "ITC Avant Garde", Arial, sans-serif;
+  --font-style-display-2-weight: 600;
+  --font-style-display-2-size: 56px;
+  --font-style-display-2-line-height: 1.125;
+  --font-style-display-2-letter-spacing: -0.003em;
+  --font-style-display-3-family: "Avant Garde For Salesforce", "ITC Avant Garde", Arial, sans-serif;
+  --font-style-display-3-weight: 600;
+  --font-style-display-3-size: 48px;
+  --font-style-display-3-line-height: 1.125;
+  --font-style-display-3-letter-spacing: -0.0025em;
+  --font-style-display-4-family: "Avant Garde For Salesforce", "ITC Avant Garde", Arial, sans-serif;
+  --font-style-display-4-weight: 600;
+  --font-style-display-4-size: 40px;
+  --font-style-display-4-line-height: 1.125;
+  --font-style-display-4-letter-spacing: -0.0025em;
+  --font-style-display-5-family: "Avant Garde For Salesforce", "ITC Avant Garde", Arial, sans-serif;
+  --font-style-display-5-weight: 600;
+  --font-style-display-5-size: 32px;
+  --font-style-display-5-line-height: 1.25;
+  --font-style-display-5-letter-spacing: -0.0015em;
+  --font-style-display-6-family: "Avant Garde For Salesforce", "ITC Avant Garde", Arial, sans-serif;
+  --font-style-display-6-weight: 600;
+  --font-style-display-6-size: 24px;
+  --font-style-display-6-line-height: 1.25;
+  --font-style-display-6-letter-spacing: -0.0015em;
+  --font-style-display-7-family: "Avant Garde For Salesforce", "ITC Avant Garde", Arial, sans-serif;
+  --font-style-display-7-weight: 600;
+  --font-style-display-7-size: 20px;
+  --font-style-display-7-line-height: 1.5;
+  --font-style-display-7-letter-spacing: -0.0015em;
+  --font-style-display-8-family: "Avant Garde For Salesforce", "ITC Avant Garde", Arial, sans-serif;
+  --font-style-display-8-weight: 600;
+  --font-style-display-8-size: 18px;
+  --font-style-display-8-line-height: 1.5;
+  --font-style-display-8-letter-spacing: -0.0015em;
+  --font-style-display-9-family: "Avant Garde For Salesforce", "ITC Avant Garde", Arial, sans-serif;
+  --font-style-display-9-weight: 600;
+  --font-style-display-9-size: 16px;
+  --font-style-display-9-line-height: 1.5;
+  --font-style-display-9-letter-spacing: 0.002em;
+  --font-style-body-copy-1-family: "Salesforce Sans", Arial, sans-serif;
+  --font-style-body-copy-1-weight: 400;
+  --font-style-body-copy-1-size: 20px;
+  --font-style-body-copy-1-line-height: 1.5;
+  --font-style-body-copy-1-letter-spacing: 0.00125em;
+  --font-style-body-copy-1-bold-family: "Salesforce Sans", Arial, sans-serif;
+  --font-style-body-copy-1-bold-weight: 700;
+  --font-style-body-copy-1-bold-size: 20px;
+  --font-style-body-copy-1-bold-line-height: 1.5;
+  --font-style-body-copy-1-bold-letter-spacing: 0.00125em;
+  --font-style-body-copy-2-family: "Salesforce Sans", Arial, sans-serif;
+  --font-style-body-copy-2-weight: 400;
+  --font-style-body-copy-2-size: 18px;
+  --font-style-body-copy-2-line-height: 1.5;
+  --font-style-body-copy-2-letter-spacing: 0.00125em;
+  --font-style-body-copy-2-bold-family: "Salesforce Sans", Arial, sans-serif;
+  --font-style-body-copy-2-bold-weight: 700;
+  --font-style-body-copy-2-bold-size: 18px;
+  --font-style-body-copy-2-bold-line-height: 1.5;
+  --font-style-body-copy-2-bold-letter-spacing: 0.00125em;
+  --font-style-body-copy-3-family: "Salesforce Sans", Arial, sans-serif;
+  --font-style-body-copy-3-weight: 400;
+  --font-style-body-copy-3-size: 16px;
+  --font-style-body-copy-3-line-height: 1.5;
+  --font-style-body-copy-3-letter-spacing: 0.00125em;
+  --font-style-body-copy-3-bold-family: "Salesforce Sans", Arial, sans-serif;
+  --font-style-body-copy-3-bold-weight: 700;
+  --font-style-body-copy-3-bold-size: 16px;
+  --font-style-body-copy-3-bold-line-height: 1.5;
+  --font-style-body-copy-3-bold-letter-spacing: 0.00125em;
+  --font-style-body-copy-4-family: "Salesforce Sans", Arial, sans-serif;
+  --font-style-body-copy-4-weight: 400;
+  --font-style-body-copy-4-size: 14px;
+  --font-style-body-copy-4-line-height: 1.5;
+  --font-style-body-copy-4-letter-spacing: 0em;
+  --font-style-body-copy-4-bold-family: "Salesforce Sans", Arial, sans-serif;
+  --font-style-body-copy-4-bold-weight: 700;
+  --font-style-body-copy-4-bold-size: 14px;
+  --font-style-body-copy-4-bold-line-height: 1.5;
+  --font-style-body-copy-4-bold-letter-spacing: 0em;
+  --font-style-body-copy-5-family: "Salesforce Sans", Arial, sans-serif;
+  --font-style-body-copy-5-weight: 400;
+  --font-style-body-copy-5-size: 12px;
+  --font-style-body-copy-5-line-height: 1.5;
+  --font-style-body-copy-5-letter-spacing: 0.002em;
+  --font-style-body-copy-5-bold-family: "Salesforce Sans", Arial, sans-serif;
+  --font-style-body-copy-5-bold-weight: 700;
+  --font-style-body-copy-5-bold-size: 12px;
+  --font-style-body-copy-5-bold-line-height: 1.5;
+  --font-style-body-copy-5-bold-letter-spacing: 0.002em;
+
+  /* Primitive layer (--g-font-*) — aliases through legacy. */
+  --g-font-family-avant-garde: var(--font-family-display);
+  --g-font-family-salesforce-sans: var(--font-family-body);
+  --g-font-weight-400: var(--font-weight-regular);
+  --g-font-weight-600: var(--font-weight-demi);
+  --g-font-weight-700: var(--font-weight-bold);
+  --g-font-size-12: var(--font-size-12);
+  --g-font-size-14: var(--font-size-14);
+  --g-font-size-16: var(--font-size-16);
+  --g-font-size-18: var(--font-size-18);
+  --g-font-size-20: var(--font-size-20);
+  --g-font-size-24: var(--font-size-24);
+  --g-font-size-32: var(--font-size-32);
+  --g-font-size-40: var(--font-size-40);
+  --g-font-size-48: var(--font-size-48);
+  --g-font-size-56: var(--font-size-56);
+  --g-font-size-80: var(--font-size-80);
+  --g-font-line-height-1-125: var(--font-line-height-tight);
+  --g-font-line-height-1-25: var(--font-line-height-snug);
+  --g-font-line-height-1-5: var(--font-line-height-normal);
+  --g-font-letter-spacing--4: var(--font-letter-spacing--4);
+  --g-font-letter-spacing--3: var(--font-letter-spacing--3);
+  --g-font-letter-spacing--2: var(--font-letter-spacing--2);
+  --g-font-letter-spacing--1: var(--font-letter-spacing--1);
+  --g-font-letter-spacing-0: var(--font-letter-spacing-0);
+  --g-font-letter-spacing-1: var(--font-letter-spacing-1);
+  --g-font-letter-spacing-2: var(--font-letter-spacing-2);
+
+  /* Semantic layer (--s-font-*) — aliases through --g-*. */
+  --s-font-family-display: var(--g-font-family-avant-garde);
+  --s-font-family-body: var(--g-font-family-salesforce-sans);
+  --s-font-weight-regular: var(--g-font-weight-400);
+  --s-font-weight-demi: var(--g-font-weight-600);
+  --s-font-weight-bold: var(--g-font-weight-700);
+  --s-font-size-xs: var(--g-font-size-12);
+  --s-font-size-sm: var(--g-font-size-14);
+  --s-font-size-base: var(--g-font-size-16);
+  --s-font-size-lg: var(--g-font-size-18);
+  --s-font-size-xl: var(--g-font-size-20);
+  --s-font-size-2xl: var(--g-font-size-24);
+  --s-font-size-3xl: var(--g-font-size-32);
+  --s-font-size-4xl: var(--g-font-size-40);
+  --s-font-size-5xl: var(--g-font-size-48);
+  --s-font-size-6xl: var(--g-font-size-56);
+  --s-font-size-7xl: var(--g-font-size-80);
+  --s-font-line-height-tight: var(--g-font-line-height-1-125);
+  --s-font-line-height-snug: var(--g-font-line-height-1-25);
+  --s-font-line-height-normal: var(--g-font-line-height-1-5);
+}
+
+/* Style aliases — bundle the four primitives per role. */
+.style-display-1 {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-demi);
+  font-size: var(--font-size-80);
+  line-height: 1.125;
+  letter-spacing: -0.0036em;
+}
+.style-display-2 {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-demi);
+  font-size: var(--font-size-56);
+  line-height: 1.125;
+  letter-spacing: -0.003em;
+}
+.style-display-3 {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-demi);
+  font-size: var(--font-size-48);
+  line-height: 1.125;
+  letter-spacing: -0.0025em;
+}
+.style-display-4 {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-demi);
+  font-size: var(--font-size-40);
+  line-height: 1.125;
+  letter-spacing: -0.0025em;
+}
+.style-display-5 {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-demi);
+  font-size: var(--font-size-32);
+  line-height: 1.25;
+  letter-spacing: -0.0015em;
+}
+.style-display-6 {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-demi);
+  font-size: var(--font-size-24);
+  line-height: 1.25;
+  letter-spacing: -0.0015em;
+}
+.style-display-7 {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-demi);
+  font-size: var(--font-size-20);
+  line-height: 1.5;
+  letter-spacing: -0.0015em;
+}
+.style-display-8 {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-demi);
+  font-size: var(--font-size-18);
+  line-height: 1.5;
+  letter-spacing: -0.0015em;
+}
+.style-display-9 {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-demi);
+  font-size: var(--font-size-16);
+  line-height: 1.5;
+  letter-spacing: 0.002em;
+}
+.style-body-copy-1 {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-20);
+  line-height: 1.5;
+  letter-spacing: 0.00125em;
+}
+.style-body-copy-1-bold {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-20);
+  line-height: 1.5;
+  letter-spacing: 0.00125em;
+}
+.style-body-copy-2 {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-18);
+  line-height: 1.5;
+  letter-spacing: 0.00125em;
+}
+.style-body-copy-2-bold {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-18);
+  line-height: 1.5;
+  letter-spacing: 0.00125em;
+}
+.style-body-copy-3 {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-16);
+  line-height: 1.5;
+  letter-spacing: 0.00125em;
+}
+.style-body-copy-3-bold {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-16);
+  line-height: 1.5;
+  letter-spacing: 0.00125em;
+}
+.style-body-copy-4 {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-14);
+  line-height: 1.5;
+  letter-spacing: 0em;
+}
+.style-body-copy-4-bold {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-14);
+  line-height: 1.5;
+  letter-spacing: 0em;
+}
+.style-body-copy-5 {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-12);
+  line-height: 1.5;
+  letter-spacing: 0.002em;
+}
+.style-body-copy-5-bold {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-12);
+  line-height: 1.5;
+  letter-spacing: 0.002em;
+}
+
+/* ─── Modern typography variant ─────────────────────────────── */
+/* SFDC typography — generated by Theme Builder. */
+[data-typography='modern'] {
+  --font-family-display: "Avant Garde For Salesforce", "ITC Avant Garde", Arial, sans-serif;
+  --font-family-body: "Salesforce Sans", Arial, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-demi: 500;
+  --font-weight-bold: 700;
+  --font-size-12: 11px;
+  --font-size-14: 13px;
+  --font-size-16: 15px;
+  --font-size-18: 16px;
+  --font-size-20: 18px;
+  --font-size-24: 22px;
+  --font-size-32: 28px;
+  --font-size-40: 34px;
+  --font-size-48: 40px;
+  --font-size-56: 48px;
+  --font-size-80: 72px;
+  --font-line-height-tight: 1.125;
+  --font-line-height-snug: 1.25;
+  --font-line-height-normal: 1.5;
+  --font-letter-spacing--4: -0.003em;
+  --font-letter-spacing--3: -0.002em;
+  --font-letter-spacing--2: -0.001em;
+  --font-letter-spacing--1: 0em;
+  --font-letter-spacing-0: 0.005em;
+  --font-letter-spacing-1: 0.015em;
+  --font-letter-spacing-2: 0.035em;
+  --font-style-display-1-family: "Avant Garde For Salesforce", "ITC Avant Garde", Arial, sans-serif;
+  --font-style-display-1-weight: 500;
+  --font-style-display-1-size: 72px;
+  --font-style-display-1-line-height: 1.05;
+  --font-style-display-1-letter-spacing: -0.003em;
+  --font-style-display-2-family: "Avant Garde For Salesforce", "ITC Avant Garde", Arial, sans-serif;
+  --font-style-display-2-weight: 500;
+  --font-style-display-2-size: 48px;
+  --font-style-display-2-line-height: 1.08;
+  --font-style-display-2-letter-spacing: -0.002em;
+  --font-style-display-3-family: "Avant Garde For Salesforce", "ITC Avant Garde", Arial, sans-serif;
+  --font-style-display-3-weight: 500;
+  --font-style-display-3-size: 40px;
+  --font-style-display-3-line-height: 1.1;
+  --font-style-display-3-letter-spacing: -0.001em;
+  --font-style-display-4-family: "Avant Garde For Salesforce", "ITC Avant Garde", Arial, sans-serif;
+  --font-style-display-4-weight: 500;
+  --font-style-display-4-size: 34px;
+  --font-style-display-4-line-height: 1.12;
+  --font-style-display-4-letter-spacing: -0.001em;
+  --font-style-display-5-family: "Avant Garde For Salesforce", "ITC Avant Garde", Arial, sans-serif;
+  --font-style-display-5-weight: 500;
+  --font-style-display-5-size: 28px;
+  --font-style-display-5-line-height: 1.15;
+  --font-style-display-5-letter-spacing: 0em;
+  --font-style-display-6-family: "Avant Garde For Salesforce", "ITC Avant Garde", Arial, sans-serif;
+  --font-style-display-6-weight: 500;
+  --font-style-display-6-size: 22px;
+  --font-style-display-6-line-height: 1.18;
+  --font-style-display-6-letter-spacing: 0em;
+  --font-style-display-7-family: "Avant Garde For Salesforce", "ITC Avant Garde", Arial, sans-serif;
+  --font-style-display-7-weight: 500;
+  --font-style-display-7-size: 18px;
+  --font-style-display-7-line-height: 1.2;
+  --font-style-display-7-letter-spacing: 0em;
+  --font-style-display-8-family: "Avant Garde For Salesforce", "ITC Avant Garde", Arial, sans-serif;
+  --font-style-display-8-weight: 500;
+  --font-style-display-8-size: 16px;
+  --font-style-display-8-line-height: 1.25;
+  --font-style-display-8-letter-spacing: 0em;
+  --font-style-display-9-family: "Avant Garde For Salesforce", "ITC Avant Garde", Arial, sans-serif;
+  --font-style-display-9-weight: 500;
+  --font-style-display-9-size: 15px;
+  --font-style-display-9-line-height: 1.3;
+  --font-style-display-9-letter-spacing: 0.035em;
+  --font-style-body-copy-1-family: "Salesforce Sans", Arial, sans-serif;
+  --font-style-body-copy-1-weight: 400;
+  --font-style-body-copy-1-size: 18px;
+  --font-style-body-copy-1-line-height: 1.45;
+  --font-style-body-copy-1-letter-spacing: 0.015em;
+  --font-style-body-copy-1-bold-family: "Salesforce Sans", Arial, sans-serif;
+  --font-style-body-copy-1-bold-weight: 700;
+  --font-style-body-copy-1-bold-size: 18px;
+  --font-style-body-copy-1-bold-line-height: 1.45;
+  --font-style-body-copy-1-bold-letter-spacing: 0.015em;
+  --font-style-body-copy-2-family: "Salesforce Sans", Arial, sans-serif;
+  --font-style-body-copy-2-weight: 400;
+  --font-style-body-copy-2-size: 16px;
+  --font-style-body-copy-2-line-height: 1.5;
+  --font-style-body-copy-2-letter-spacing: 0.015em;
+  --font-style-body-copy-2-bold-family: "Salesforce Sans", Arial, sans-serif;
+  --font-style-body-copy-2-bold-weight: 700;
+  --font-style-body-copy-2-bold-size: 16px;
+  --font-style-body-copy-2-bold-line-height: 1.5;
+  --font-style-body-copy-2-bold-letter-spacing: 0.015em;
+  --font-style-body-copy-3-family: "Salesforce Sans", Arial, sans-serif;
+  --font-style-body-copy-3-weight: 400;
+  --font-style-body-copy-3-size: 15px;
+  --font-style-body-copy-3-line-height: 1.55;
+  --font-style-body-copy-3-letter-spacing: 0.015em;
+  --font-style-body-copy-3-bold-family: "Salesforce Sans", Arial, sans-serif;
+  --font-style-body-copy-3-bold-weight: 700;
+  --font-style-body-copy-3-bold-size: 15px;
+  --font-style-body-copy-3-bold-line-height: 1.55;
+  --font-style-body-copy-3-bold-letter-spacing: 0.015em;
+  --font-style-body-copy-4-family: "Salesforce Sans", Arial, sans-serif;
+  --font-style-body-copy-4-weight: 400;
+  --font-style-body-copy-4-size: 13px;
+  --font-style-body-copy-4-line-height: 1.55;
+  --font-style-body-copy-4-letter-spacing: 0.005em;
+  --font-style-body-copy-4-bold-family: "Salesforce Sans", Arial, sans-serif;
+  --font-style-body-copy-4-bold-weight: 700;
+  --font-style-body-copy-4-bold-size: 13px;
+  --font-style-body-copy-4-bold-line-height: 1.55;
+  --font-style-body-copy-4-bold-letter-spacing: 0.005em;
+  --font-style-body-copy-5-family: "Salesforce Sans", Arial, sans-serif;
+  --font-style-body-copy-5-weight: 400;
+  --font-style-body-copy-5-size: 11px;
+  --font-style-body-copy-5-line-height: 1.6;
+  --font-style-body-copy-5-letter-spacing: 0.035em;
+  --font-style-body-copy-5-bold-family: "Salesforce Sans", Arial, sans-serif;
+  --font-style-body-copy-5-bold-weight: 700;
+  --font-style-body-copy-5-bold-size: 11px;
+  --font-style-body-copy-5-bold-line-height: 1.6;
+  --font-style-body-copy-5-bold-letter-spacing: 0.035em;
+
+  /* Primitive layer (--g-font-*) — aliases through legacy. */
+  --g-font-family-avant-garde: var(--font-family-display);
+  --g-font-family-salesforce-sans: var(--font-family-body);
+  --g-font-weight-400: var(--font-weight-regular);
+  --g-font-weight-500: var(--font-weight-demi);
+  --g-font-weight-700: var(--font-weight-bold);
+  --g-font-size-12: var(--font-size-12);
+  --g-font-size-14: var(--font-size-14);
+  --g-font-size-16: var(--font-size-16);
+  --g-font-size-18: var(--font-size-18);
+  --g-font-size-20: var(--font-size-20);
+  --g-font-size-24: var(--font-size-24);
+  --g-font-size-32: var(--font-size-32);
+  --g-font-size-40: var(--font-size-40);
+  --g-font-size-48: var(--font-size-48);
+  --g-font-size-56: var(--font-size-56);
+  --g-font-size-80: var(--font-size-80);
+  --g-font-line-height-1-125: var(--font-line-height-tight);
+  --g-font-line-height-1-25: var(--font-line-height-snug);
+  --g-font-line-height-1-5: var(--font-line-height-normal);
+  --g-font-letter-spacing--4: var(--font-letter-spacing--4);
+  --g-font-letter-spacing--3: var(--font-letter-spacing--3);
+  --g-font-letter-spacing--2: var(--font-letter-spacing--2);
+  --g-font-letter-spacing--1: var(--font-letter-spacing--1);
+  --g-font-letter-spacing-0: var(--font-letter-spacing-0);
+  --g-font-letter-spacing-1: var(--font-letter-spacing-1);
+  --g-font-letter-spacing-2: var(--font-letter-spacing-2);
+
+  /* Semantic layer (--s-font-*) — aliases through --g-*. */
+  --s-font-family-display: var(--g-font-family-avant-garde);
+  --s-font-family-body: var(--g-font-family-salesforce-sans);
+  --s-font-weight-regular: var(--g-font-weight-400);
+  --s-font-weight-demi: var(--g-font-weight-500);
+  --s-font-weight-bold: var(--g-font-weight-700);
+  --s-font-size-xs: var(--g-font-size-12);
+  --s-font-size-sm: var(--g-font-size-14);
+  --s-font-size-base: var(--g-font-size-16);
+  --s-font-size-lg: var(--g-font-size-18);
+  --s-font-size-xl: var(--g-font-size-20);
+  --s-font-size-2xl: var(--g-font-size-24);
+  --s-font-size-3xl: var(--g-font-size-32);
+  --s-font-size-4xl: var(--g-font-size-40);
+  --s-font-size-5xl: var(--g-font-size-48);
+  --s-font-size-6xl: var(--g-font-size-56);
+  --s-font-size-7xl: var(--g-font-size-80);
+  --s-font-line-height-tight: var(--g-font-line-height-1-125);
+  --s-font-line-height-snug: var(--g-font-line-height-1-25);
+  --s-font-line-height-normal: var(--g-font-line-height-1-5);
+}
+
+/* Style aliases — bundle the four primitives per role. */
+.style-display-1 {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-demi);
+  font-size: var(--font-size-80);
+  line-height: 1.05;
+  letter-spacing: -0.003em;
+}
+.style-display-2 {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-demi);
+  font-size: var(--font-size-56);
+  line-height: 1.08;
+  letter-spacing: -0.002em;
+}
+.style-display-3 {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-demi);
+  font-size: var(--font-size-48);
+  line-height: 1.1;
+  letter-spacing: -0.001em;
+}
+.style-display-4 {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-demi);
+  font-size: var(--font-size-40);
+  line-height: 1.12;
+  letter-spacing: -0.001em;
+}
+.style-display-5 {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-demi);
+  font-size: var(--font-size-32);
+  line-height: 1.15;
+  letter-spacing: 0em;
+}
+.style-display-6 {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-demi);
+  font-size: var(--font-size-24);
+  line-height: 1.18;
+  letter-spacing: 0em;
+}
+.style-display-7 {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-demi);
+  font-size: var(--font-size-20);
+  line-height: 1.2;
+  letter-spacing: 0em;
+}
+.style-display-8 {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-demi);
+  font-size: var(--font-size-18);
+  line-height: 1.25;
+  letter-spacing: 0em;
+}
+.style-display-9 {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-demi);
+  font-size: var(--font-size-16);
+  line-height: 1.3;
+  letter-spacing: 0.035em;
+}
+.style-body-copy-1 {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-20);
+  line-height: 1.45;
+  letter-spacing: 0.015em;
+}
+.style-body-copy-1-bold {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-20);
+  line-height: 1.45;
+  letter-spacing: 0.015em;
+}
+.style-body-copy-2 {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-18);
+  line-height: 1.5;
+  letter-spacing: 0.015em;
+}
+.style-body-copy-2-bold {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-18);
+  line-height: 1.5;
+  letter-spacing: 0.015em;
+}
+.style-body-copy-3 {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-16);
+  line-height: 1.55;
+  letter-spacing: 0.015em;
+}
+.style-body-copy-3-bold {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-16);
+  line-height: 1.55;
+  letter-spacing: 0.015em;
+}
+.style-body-copy-4 {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-14);
+  line-height: 1.55;
+  letter-spacing: 0.005em;
+}
+.style-body-copy-4-bold {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-14);
+  line-height: 1.55;
+  letter-spacing: 0.005em;
+}
+.style-body-copy-5 {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-12);
+  line-height: 1.6;
+  letter-spacing: 0.035em;
+}
+.style-body-copy-5-bold {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-12);
+  line-height: 1.6;
+  letter-spacing: 0.035em;
+}
+
+/* ─── Default spacing — 17-step ladder + aliases + grid ─────── */
+/* SFDC spacing tokens. Generated by Spacing Theme Builder. */
+:root, [data-spacing='default'] {
+  /* Primitive ladder */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+  --space-8: 48px;
+  --space-9: 56px;
+  --space-10: 64px;
+  --space-11: 72px;
+  --space-12: 80px;
+  --space-13: 88px;
+  --space-14: 96px;
+  --space-15: 104px;
+  --space-16: 112px;
+  --space-17: 120px;
+
+  /* Layout aliases */
+  --space-layout-margin: 48px;
+  --space-layout-margin-md: 32px;
+  --space-layout-margin-sm: 24px;
+  --space-layout-gutter: 40px;
+  --space-layout-gutter-md: 32px;
+  --space-layout-gutter-sm: 24px;
+  --space-layout-gap-lg: 64px;
+  --space-layout-gap: 48px;
+  --space-layout-gap-md: 32px;
+  --space-layout-gap-sm: 24px;
+
+  /* Surface aliases */
+  --space-surface-padding: 32px;
+  --space-surface-padding-md: 24px;
+  --space-surface-padding-sm: 12px;
+
+  /* Container aliases */
+  --space-container-padding-xl: 64px;
+  --space-container-padding-lg: 56px;
+  --space-container-padding: 48px;
+  --space-container-padding-md: 40px;
+  --space-container-padding-sm: 32px;
+  --space-container-padding-xs: 24px;
+
+  /* Content aliases */
+  --space-content-2xs: 4px;
+  --space-content-xs: 8px;
+  --space-content-sm: 12px;
+  --space-content-md: 16px;
+  --space-content-lg: 24px;
+  --space-content-xl: 32px;
+  --space-content-2xl: 48px;
+  --space-content-3xl: 64px;
+
+  /* Interactive aliases */
+  --space-interactive-2xs: 4px;
+  --space-interactive-xs: 8px;
+  --space-interactive-sm: 12px;
+  --space-interactive-md: 16px;
+  --space-interactive-lg: 24px;
+  --space-interactive-xl: 32px;
+
+  /* Grid breakpoint geometry */
+  /* Note: blades are always 100% viewport width. The values
+     below describe the GRID inside each blade and the @media
+     min-width at which each breakpoint activates. There is no
+     'blade max-width' — that's by design. */
+  --space-grid-large-desktop-columns: 12;
+  --space-grid-large-desktop-margin: 48px;
+  --space-grid-large-desktop-gutter: 40px;
+  --space-grid-large-desktop-surface-padding: 32px;
+  --space-grid-large-desktop-min-viewport: 1600px;
+  --space-grid-large-desktop-max-content-width: 1280px;
+  --space-grid-desktop-columns: 12;
+  --space-grid-desktop-margin: 48px;
+  --space-grid-desktop-gutter: 40px;
+  --space-grid-desktop-surface-padding: 32px;
+  --space-grid-desktop-min-viewport: 1440px;
+  --space-grid-desktop-max-content-width: 1280px;
+  --space-grid-tablet-landscape-columns: 12;
+  --space-grid-tablet-landscape-margin: 48px;
+  --space-grid-tablet-landscape-gutter: 32px;
+  --space-grid-tablet-landscape-surface-padding: 32px;
+  --space-grid-tablet-landscape-min-viewport: 1024px;
+  --space-grid-tablet-landscape-max-content-width: none;
+  --space-grid-tablet-portrait-columns: 12;
+  --space-grid-tablet-portrait-margin: 32px;
+  --space-grid-tablet-portrait-gutter: 24px;
+  --space-grid-tablet-portrait-surface-padding: 24px;
+  --space-grid-tablet-portrait-min-viewport: 768px;
+  --space-grid-tablet-portrait-max-content-width: none;
+  --space-grid-mobile-columns: 6;
+  --space-grid-mobile-margin: 24px;
+  --space-grid-mobile-gutter: 24px;
+  --space-grid-mobile-surface-padding: 24px;
+  --space-grid-mobile-min-viewport: 0px;
+  --space-grid-mobile-max-content-width: none;
+
+  /* Semantic alias mirror (--s-space-*) — same pattern as
+     src/index.css. Consumes via `--space-*`; the codebase reads
+     via `--s-space-*`. Both layers ship side-by-side so legacy
+     consumers and migrated consumers resolve correctly. */
+  --s-space-1: var(--space-1);
+  --s-space-2: var(--space-2);
+  --s-space-3: var(--space-3);
+  --s-space-4: var(--space-4);
+  --s-space-5: var(--space-5);
+  --s-space-6: var(--space-6);
+  --s-space-7: var(--space-7);
+  --s-space-8: var(--space-8);
+  --s-space-9: var(--space-9);
+  --s-space-10: var(--space-10);
+  --s-space-11: var(--space-11);
+  --s-space-12: var(--space-12);
+  --s-space-13: var(--space-13);
+  --s-space-14: var(--space-14);
+  --s-space-15: var(--space-15);
+  --s-space-16: var(--space-16);
+  --s-space-17: var(--space-17);
+  --s-space-layout-margin: var(--space-layout-margin);
+  --s-space-layout-margin-md: var(--space-layout-margin-md);
+  --s-space-layout-margin-sm: var(--space-layout-margin-sm);
+  --s-space-layout-gutter: var(--space-layout-gutter);
+  --s-space-layout-gutter-md: var(--space-layout-gutter-md);
+  --s-space-layout-gutter-sm: var(--space-layout-gutter-sm);
+  --s-space-layout-gap-lg: var(--space-layout-gap-lg);
+  --s-space-layout-gap: var(--space-layout-gap);
+  --s-space-layout-gap-md: var(--space-layout-gap-md);
+  --s-space-layout-gap-sm: var(--space-layout-gap-sm);
+  --s-space-surface-padding: var(--space-surface-padding);
+  --s-space-surface-padding-md: var(--space-surface-padding-md);
+  --s-space-surface-padding-sm: var(--space-surface-padding-sm);
+  --s-space-container-padding-xl: var(--space-container-padding-xl);
+  --s-space-container-padding-lg: var(--space-container-padding-lg);
+  --s-space-container-padding: var(--space-container-padding);
+  --s-space-container-padding-md: var(--space-container-padding-md);
+  --s-space-container-padding-sm: var(--space-container-padding-sm);
+  --s-space-container-padding-xs: var(--space-container-padding-xs);
+  --s-space-content-2xs: var(--space-content-2xs);
+  --s-space-content-xs: var(--space-content-xs);
+  --s-space-content-sm: var(--space-content-sm);
+  --s-space-content-md: var(--space-content-md);
+  --s-space-content-lg: var(--space-content-lg);
+  --s-space-content-xl: var(--space-content-xl);
+  --s-space-content-2xl: var(--space-content-2xl);
+  --s-space-content-3xl: var(--space-content-3xl);
+  --s-space-interactive-2xs: var(--space-interactive-2xs);
+  --s-space-interactive-xs: var(--space-interactive-xs);
+  --s-space-interactive-sm: var(--space-interactive-sm);
+  --s-space-interactive-md: var(--space-interactive-md);
+  --s-space-interactive-lg: var(--space-interactive-lg);
+  --s-space-interactive-xl: var(--space-interactive-xl);
+  --s-space-grid-large-desktop-columns: var(--space-grid-large-desktop-columns);
+  --s-space-grid-large-desktop-margin: var(--space-grid-large-desktop-margin);
+  --s-space-grid-large-desktop-gutter: var(--space-grid-large-desktop-gutter);
+  --s-space-grid-large-desktop-surface-padding: var(--space-grid-large-desktop-surface-padding);
+  --s-space-grid-large-desktop-min-viewport: var(--space-grid-large-desktop-min-viewport);
+  --s-space-grid-large-desktop-max-content-width: var(--space-grid-large-desktop-max-content-width);
+  --s-space-grid-desktop-columns: var(--space-grid-desktop-columns);
+  --s-space-grid-desktop-margin: var(--space-grid-desktop-margin);
+  --s-space-grid-desktop-gutter: var(--space-grid-desktop-gutter);
+  --s-space-grid-desktop-surface-padding: var(--space-grid-desktop-surface-padding);
+  --s-space-grid-desktop-min-viewport: var(--space-grid-desktop-min-viewport);
+  --s-space-grid-desktop-max-content-width: var(--space-grid-desktop-max-content-width);
+  --s-space-grid-tablet-landscape-columns: var(--space-grid-tablet-landscape-columns);
+  --s-space-grid-tablet-landscape-margin: var(--space-grid-tablet-landscape-margin);
+  --s-space-grid-tablet-landscape-gutter: var(--space-grid-tablet-landscape-gutter);
+  --s-space-grid-tablet-landscape-surface-padding: var(--space-grid-tablet-landscape-surface-padding);
+  --s-space-grid-tablet-landscape-min-viewport: var(--space-grid-tablet-landscape-min-viewport);
+  --s-space-grid-tablet-landscape-max-content-width: var(--space-grid-tablet-landscape-max-content-width);
+  --s-space-grid-tablet-portrait-columns: var(--space-grid-tablet-portrait-columns);
+  --s-space-grid-tablet-portrait-margin: var(--space-grid-tablet-portrait-margin);
+  --s-space-grid-tablet-portrait-gutter: var(--space-grid-tablet-portrait-gutter);
+  --s-space-grid-tablet-portrait-surface-padding: var(--space-grid-tablet-portrait-surface-padding);
+  --s-space-grid-tablet-portrait-min-viewport: var(--space-grid-tablet-portrait-min-viewport);
+  --s-space-grid-tablet-portrait-max-content-width: var(--space-grid-tablet-portrait-max-content-width);
+  --s-space-grid-mobile-columns: var(--space-grid-mobile-columns);
+  --s-space-grid-mobile-margin: var(--space-grid-mobile-margin);
+  --s-space-grid-mobile-gutter: var(--space-grid-mobile-gutter);
+  --s-space-grid-mobile-surface-padding: var(--space-grid-mobile-surface-padding);
+  --s-space-grid-mobile-min-viewport: var(--space-grid-mobile-min-viewport);
+  --s-space-grid-mobile-max-content-width: var(--space-grid-mobile-max-content-width);
+}
+
+/* ─── Tight spacing variant ─────────────────────────────────── */
+/* SFDC spacing tokens. Generated by Spacing Theme Builder. */
+[data-spacing='tight'] {
+  /* Primitive ladder */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+  --space-8: 48px;
+  --space-9: 56px;
+  --space-10: 64px;
+  --space-11: 72px;
+  --space-12: 80px;
+  --space-13: 88px;
+  --space-14: 96px;
+  --space-15: 104px;
+  --space-16: 112px;
+  --space-17: 120px;
+
+  /* Layout aliases */
+  --space-layout-margin: 32px;
+  --space-layout-margin-md: 24px;
+  --space-layout-margin-sm: 16px;
+  --space-layout-gutter: 32px;
+  --space-layout-gutter-md: 24px;
+  --space-layout-gutter-sm: 16px;
+  --space-layout-gap-lg: 48px;
+  --space-layout-gap: 40px;
+  --space-layout-gap-md: 24px;
+  --space-layout-gap-sm: 16px;
+
+  /* Surface aliases */
+  --space-surface-padding: 48px;
+  --space-surface-padding-md: 32px;
+  --space-surface-padding-sm: 16px;
+
+  /* Container aliases */
+  --space-container-padding-xl: 48px;
+  --space-container-padding-lg: 40px;
+  --space-container-padding: 32px;
+  --space-container-padding-md: 24px;
+  --space-container-padding-sm: 24px;
+  --space-container-padding-xs: 16px;
+
+  /* Content aliases */
+  --space-content-2xs: 4px;
+  --space-content-xs: 4px;
+  --space-content-sm: 8px;
+  --space-content-md: 12px;
+  --space-content-lg: 16px;
+  --space-content-xl: 24px;
+  --space-content-2xl: 32px;
+  --space-content-3xl: 48px;
+
+  /* Interactive aliases */
+  --space-interactive-2xs: 4px;
+  --space-interactive-xs: 4px;
+  --space-interactive-sm: 8px;
+  --space-interactive-md: 12px;
+  --space-interactive-lg: 16px;
+  --space-interactive-xl: 24px;
+
+  /* Grid breakpoint geometry */
+  /* Note: blades are always 100% viewport width. The values
+     below describe the GRID inside each blade and the @media
+     min-width at which each breakpoint activates. There is no
+     'blade max-width' — that's by design. */
+  --space-grid-large-desktop-columns: 12;
+  --space-grid-large-desktop-margin: 32px;
+  --space-grid-large-desktop-gutter: 32px;
+  --space-grid-large-desktop-surface-padding: 48px;
+  --space-grid-large-desktop-min-viewport: 1600px;
+  --space-grid-large-desktop-max-content-width: 1280px;
+  --space-grid-desktop-columns: 12;
+  --space-grid-desktop-margin: 32px;
+  --space-grid-desktop-gutter: 32px;
+  --space-grid-desktop-surface-padding: 48px;
+  --space-grid-desktop-min-viewport: 1440px;
+  --space-grid-desktop-max-content-width: 1280px;
+  --space-grid-tablet-landscape-columns: 12;
+  --space-grid-tablet-landscape-margin: 32px;
+  --space-grid-tablet-landscape-gutter: 24px;
+  --space-grid-tablet-landscape-surface-padding: 48px;
+  --space-grid-tablet-landscape-min-viewport: 1024px;
+  --space-grid-tablet-landscape-max-content-width: none;
+  --space-grid-tablet-portrait-columns: 12;
+  --space-grid-tablet-portrait-margin: 24px;
+  --space-grid-tablet-portrait-gutter: 16px;
+  --space-grid-tablet-portrait-surface-padding: 32px;
+  --space-grid-tablet-portrait-min-viewport: 768px;
+  --space-grid-tablet-portrait-max-content-width: none;
+  --space-grid-mobile-columns: 6;
+  --space-grid-mobile-margin: 16px;
+  --space-grid-mobile-gutter: 16px;
+  --space-grid-mobile-surface-padding: 32px;
+  --space-grid-mobile-min-viewport: 0px;
+  --space-grid-mobile-max-content-width: none;
+
+  /* Semantic alias mirror (--s-space-*) — same pattern as
+     src/index.css. Consumes via `--space-*`; the codebase reads
+     via `--s-space-*`. Both layers ship side-by-side so legacy
+     consumers and migrated consumers resolve correctly. */
+  --s-space-1: var(--space-1);
+  --s-space-2: var(--space-2);
+  --s-space-3: var(--space-3);
+  --s-space-4: var(--space-4);
+  --s-space-5: var(--space-5);
+  --s-space-6: var(--space-6);
+  --s-space-7: var(--space-7);
+  --s-space-8: var(--space-8);
+  --s-space-9: var(--space-9);
+  --s-space-10: var(--space-10);
+  --s-space-11: var(--space-11);
+  --s-space-12: var(--space-12);
+  --s-space-13: var(--space-13);
+  --s-space-14: var(--space-14);
+  --s-space-15: var(--space-15);
+  --s-space-16: var(--space-16);
+  --s-space-17: var(--space-17);
+  --s-space-layout-margin: var(--space-layout-margin);
+  --s-space-layout-margin-md: var(--space-layout-margin-md);
+  --s-space-layout-margin-sm: var(--space-layout-margin-sm);
+  --s-space-layout-gutter: var(--space-layout-gutter);
+  --s-space-layout-gutter-md: var(--space-layout-gutter-md);
+  --s-space-layout-gutter-sm: var(--space-layout-gutter-sm);
+  --s-space-layout-gap-lg: var(--space-layout-gap-lg);
+  --s-space-layout-gap: var(--space-layout-gap);
+  --s-space-layout-gap-md: var(--space-layout-gap-md);
+  --s-space-layout-gap-sm: var(--space-layout-gap-sm);
+  --s-space-surface-padding: var(--space-surface-padding);
+  --s-space-surface-padding-md: var(--space-surface-padding-md);
+  --s-space-surface-padding-sm: var(--space-surface-padding-sm);
+  --s-space-container-padding-xl: var(--space-container-padding-xl);
+  --s-space-container-padding-lg: var(--space-container-padding-lg);
+  --s-space-container-padding: var(--space-container-padding);
+  --s-space-container-padding-md: var(--space-container-padding-md);
+  --s-space-container-padding-sm: var(--space-container-padding-sm);
+  --s-space-container-padding-xs: var(--space-container-padding-xs);
+  --s-space-content-2xs: var(--space-content-2xs);
+  --s-space-content-xs: var(--space-content-xs);
+  --s-space-content-sm: var(--space-content-sm);
+  --s-space-content-md: var(--space-content-md);
+  --s-space-content-lg: var(--space-content-lg);
+  --s-space-content-xl: var(--space-content-xl);
+  --s-space-content-2xl: var(--space-content-2xl);
+  --s-space-content-3xl: var(--space-content-3xl);
+  --s-space-interactive-2xs: var(--space-interactive-2xs);
+  --s-space-interactive-xs: var(--space-interactive-xs);
+  --s-space-interactive-sm: var(--space-interactive-sm);
+  --s-space-interactive-md: var(--space-interactive-md);
+  --s-space-interactive-lg: var(--space-interactive-lg);
+  --s-space-interactive-xl: var(--space-interactive-xl);
+  --s-space-grid-large-desktop-columns: var(--space-grid-large-desktop-columns);
+  --s-space-grid-large-desktop-margin: var(--space-grid-large-desktop-margin);
+  --s-space-grid-large-desktop-gutter: var(--space-grid-large-desktop-gutter);
+  --s-space-grid-large-desktop-surface-padding: var(--space-grid-large-desktop-surface-padding);
+  --s-space-grid-large-desktop-min-viewport: var(--space-grid-large-desktop-min-viewport);
+  --s-space-grid-large-desktop-max-content-width: var(--space-grid-large-desktop-max-content-width);
+  --s-space-grid-desktop-columns: var(--space-grid-desktop-columns);
+  --s-space-grid-desktop-margin: var(--space-grid-desktop-margin);
+  --s-space-grid-desktop-gutter: var(--space-grid-desktop-gutter);
+  --s-space-grid-desktop-surface-padding: var(--space-grid-desktop-surface-padding);
+  --s-space-grid-desktop-min-viewport: var(--space-grid-desktop-min-viewport);
+  --s-space-grid-desktop-max-content-width: var(--space-grid-desktop-max-content-width);
+  --s-space-grid-tablet-landscape-columns: var(--space-grid-tablet-landscape-columns);
+  --s-space-grid-tablet-landscape-margin: var(--space-grid-tablet-landscape-margin);
+  --s-space-grid-tablet-landscape-gutter: var(--space-grid-tablet-landscape-gutter);
+  --s-space-grid-tablet-landscape-surface-padding: var(--space-grid-tablet-landscape-surface-padding);
+  --s-space-grid-tablet-landscape-min-viewport: var(--space-grid-tablet-landscape-min-viewport);
+  --s-space-grid-tablet-landscape-max-content-width: var(--space-grid-tablet-landscape-max-content-width);
+  --s-space-grid-tablet-portrait-columns: var(--space-grid-tablet-portrait-columns);
+  --s-space-grid-tablet-portrait-margin: var(--space-grid-tablet-portrait-margin);
+  --s-space-grid-tablet-portrait-gutter: var(--space-grid-tablet-portrait-gutter);
+  --s-space-grid-tablet-portrait-surface-padding: var(--space-grid-tablet-portrait-surface-padding);
+  --s-space-grid-tablet-portrait-min-viewport: var(--space-grid-tablet-portrait-min-viewport);
+  --s-space-grid-tablet-portrait-max-content-width: var(--space-grid-tablet-portrait-max-content-width);
+  --s-space-grid-mobile-columns: var(--space-grid-mobile-columns);
+  --s-space-grid-mobile-margin: var(--space-grid-mobile-margin);
+  --s-space-grid-mobile-gutter: var(--space-grid-mobile-gutter);
+  --s-space-grid-mobile-surface-padding: var(--space-grid-mobile-surface-padding);
+  --s-space-grid-mobile-min-viewport: var(--space-grid-mobile-min-viewport);
+  --s-space-grid-mobile-max-content-width: var(--space-grid-mobile-max-content-width);
+}
+
+/* ─── Default radii — five-tier ladder ──────────────────────── */
+/* Corner radii tokens. Generated by Radii Theme Builder. */
+:root, [data-radii='default'] {
+  /* Primitive ladder */
+  --radius-1: 16px;
+  --radius-2: 12px;
+  --radius-3: 8px;
+  --radius-4: 4px;
+  --radius-circle: 9999px;
+
+  /* Semantic aliases */
+  --radius-hero-card: 16px;
+  --radius-card: 12px;
+  --radius-card-nested: 8px;
+  --radius-button: 9999px;
+  --radius-input: 4px;
+  --radius-chip: 9999px;
+  --radius-avatar: 9999px;
+  --radius-image-large: 16px;
+  --radius-image-medium: 12px;
+  --radius-image-small: 8px;
+  --radius-modal: 16px;
+  --radius-tooltip: 8px;
+  --radius-badge: 9999px;
+
+  /* Semantic alias mirror (--s-radius-*) */
+  --s-radius-1: var(--radius-1);
+  --s-radius-2: var(--radius-2);
+  --s-radius-3: var(--radius-3);
+  --s-radius-4: var(--radius-4);
+  --s-radius-circle: var(--radius-circle);
+  --s-radius-hero-card: var(--radius-hero-card);
+  --s-radius-card: var(--radius-card);
+  --s-radius-card-nested: var(--radius-card-nested);
+  --s-radius-button: var(--radius-button);
+  --s-radius-input: var(--radius-input);
+  --s-radius-chip: var(--radius-chip);
+  --s-radius-avatar: var(--radius-avatar);
+  --s-radius-image-large: var(--radius-image-large);
+  --s-radius-image-medium: var(--radius-image-medium);
+  --s-radius-image-small: var(--radius-image-small);
+  --s-radius-modal: var(--radius-modal);
+  --s-radius-tooltip: var(--radius-tooltip);
+  --s-radius-badge: var(--radius-badge);
+}
+
+/* ─── Sharp radii variant ───────────────────────────────────── */
+/* Corner radii tokens. Generated by Radii Theme Builder. */
+[data-radii='sharp'] {
+  /* Primitive ladder */
+  --radius-1: 6px;
+  --radius-2: 4px;
+  --radius-3: 3px;
+  --radius-4: 2px;
+  --radius-circle: 9999px;
+
+  /* Semantic aliases */
+  --radius-hero-card: 6px;
+  --radius-card: 4px;
+  --radius-card-nested: 3px;
+  --radius-button: 2px;
+  --radius-input: 2px;
+  --radius-chip: 3px;
+  --radius-avatar: 9999px;
+  --radius-image-large: 6px;
+  --radius-image-medium: 4px;
+  --radius-image-small: 3px;
+  --radius-modal: 6px;
+  --radius-tooltip: 3px;
+  --radius-badge: 9999px;
+
+  /* Semantic alias mirror (--s-radius-*) */
+  --s-radius-1: var(--radius-1);
+  --s-radius-2: var(--radius-2);
+  --s-radius-3: var(--radius-3);
+  --s-radius-4: var(--radius-4);
+  --s-radius-circle: var(--radius-circle);
+  --s-radius-hero-card: var(--radius-hero-card);
+  --s-radius-card: var(--radius-card);
+  --s-radius-card-nested: var(--radius-card-nested);
+  --s-radius-button: var(--radius-button);
+  --s-radius-input: var(--radius-input);
+  --s-radius-chip: var(--radius-chip);
+  --s-radius-avatar: var(--radius-avatar);
+  --s-radius-image-large: var(--radius-image-large);
+  --s-radius-image-medium: var(--radius-image-medium);
+  --s-radius-image-small: var(--radius-image-small);
+  --s-radius-modal: var(--radius-modal);
+  --s-radius-tooltip: var(--radius-tooltip);
+  --s-radius-badge: var(--radius-badge);
+}
+
+/* ═════════════════════════════════════════════════════════════════
+   Utility classes — placeholder positioning contract
+   ═════════════════════════════════════════════════════════════════ */
+
+.sf-ph-slot { position: relative; width: 100%; overflow: hidden; }
+.sf-ph-fill { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+
+/* ═════════════════════════════════════════════════════════════════
+   State-layer utility (v2.0) — interactive overlay for surface-
+   containers / cards. Opt an element in with .has-state-layer; the
+   ::after overlay paints --color-state-layer-color at the per-state
+   opacity on hover / active. Replaces the v1 surface-container-2/3/4
+   hover/active/selected tokens. Add .is-hover / .is-active to force a
+   state for previews.
+   ═════════════════════════════════════════════════════════════════ */
+
+.has-state-layer { position: relative; }
+.has-state-layer::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background: var(--color-state-layer-color, #066AFE); opacity: 0; transition: opacity 120ms ease; }
+.has-state-layer > * { position: relative; z-index: 1; }
+.has-state-layer:hover::after, .has-state-layer.is-hover::after { opacity: var(--color-state-layer-opacity-hover, 0.08); }
+.has-state-layer:active::after, .has-state-layer.is-active::after { opacity: var(--color-state-layer-opacity-active, 0.12); }
